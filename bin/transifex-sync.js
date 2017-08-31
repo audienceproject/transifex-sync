@@ -5,13 +5,13 @@
 
 "use strict";
 
+if (process.env.hasOwnProperty("DEBUG") === false) {
+	process.env.DEBUG = "transifex-sync:*";
+}
+
 const lib = require("../lib");
 
 async function run() {
-	if (process.env.hasOwnProperty("DEBUG") === false) {
-		process.env.DEBUG = "transifex-sync:*";
-	}
-
 	const cmds = process.argv.slice(2);
 	const executed = [];
 
