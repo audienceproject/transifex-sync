@@ -2,7 +2,7 @@
 
 Sync resources with transifex
 
-Requires environemnt variables:
+Requires environment variables:
 
  * `TRANSIFEX_TOKEN`
  * `TRANSIFEX_SYNC_BB_USER`
