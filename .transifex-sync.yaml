@@ -1,0 +1,7 @@
+targets:
+  - source: test/fixtures/source.yaml
+    translation: test/.artifacts/{code}.yaml
+    location:
+      project: userreport-survey
+      resource: test
+      key: transifex-sync-test

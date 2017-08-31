@@ -1,0 +1,40 @@
+definitions:
+  slug:
+    type: string
+    pattern: ^[a-z0-9\-_]+$
+
+type: object
+additionalProperties: false
+required: [targets]
+properties:
+  targets:
+    type: array
+    items:
+      type: object
+      additionalProperties: false
+      required:
+        - source
+        - translation
+        - location
+      properties:
+        source:
+          type: string
+          pattern: ^.*?(\.json|\.yaml|\.yml)$
+        translation:
+          type: string
+          pattern: ^.*?{code}.*(\.json|\.yaml|\.yml)$
+        location:
+          type: object
+          additionalProperties: false
+          required:
+            - project
+            - resource
+            - key
+          properties:
+            project:
+              $ref: "#/definitions/slug"
+            resource:
+              $ref: "#/definitions/slug"
+            key:
+              type: string
+              pattern: ^[a-zA-Z0-9\-_]+$

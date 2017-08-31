@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "@apr/transifex-sync",
+  "version": "1.0.0",
+  "description": "Sync translations with transifex",
+  "main": "lib/index.js",
+  "bin": "bin/transifex-sync.js",
+  "scripts": {
+    "bin": "node bin/transifex-sync.js"
+  },
+  "dependencies": {
+    "ajv": "^5.2.2",
+    "axios": "^0.16.2",
+    "concat-stream": "^1.6.0",
+    "debug": "^3.0.1",
+    "deep-diff": "^0.3.8",
+    "deep-filter": "^1.0.2",
+    "form-data": "^2.3.1",
+    "js-yaml": "^3.9.1",
+    "sander": "^0.6.0",
+    "title-case": "^2.1.1"
+  },
+  "devDependencies": {
+    "@rainydio/eslint-config": "^2.0.8",
+    "eslint": "^4.5.0"
+  },
+  "eslintConfig": {
+    "extends": "@rainydio/eslint-config/node"
+  }
+}
