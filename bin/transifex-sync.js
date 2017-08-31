@@ -1,4 +1,5 @@
-#!/bin/env node
+#!/usr/bin/env node
+
 /* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 

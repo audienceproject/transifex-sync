@@ -7,3 +7,4 @@ WORKDIR /app
 COPY yarn.lock .
 RUN yarn
 COPY ./ .
+RUN ln -s /app/bin/transifex-sync.js /usr/bin/transifex-sync
