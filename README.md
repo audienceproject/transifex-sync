@@ -8,13 +8,15 @@ Sync resources with transifex
 Environment variables
 
  * `$TRANSIFEX_TOKEN` [Transifex API token]
- * `$TRANSIFEX_SYNC_BB_USER` and `$TRANSIFEX_SYNC_BB_PASSWORD`
-   [Bitbucket app password]
+ * `$TRANSIFEX_SYNC_BB_PASSWORD` use bitbucket [app password]
+ * `$TRANSIFEX_SYNC_BB_USER` username who created app password
+ * `$TRANSIFEX_SYNC_BB_BRANCH` translation branch,
+   defaults to `translation`
+ * `$TRANSIFEX_SYNC_CONFIG` configuration file,
+   defaults to `.transifex-sync.yaml`.
 
 [Transifex API token]: https://docs.transifex.com/api/introduction#authentication
 [Bitbucket app password]: https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html
-
-`$TRANSIFEX_SYNC_CONFIG` environment variable sets configuration file path. By default`.transifex-sync.yaml` value is used.
 
 Configuration example:
 
@@ -39,20 +41,15 @@ Bitbucket pipelines configuration example:
 ```yaml
 pipelines:
   custom:
-    upload-source:
+    transifex-sync:
       - step:
           image: audienceproject/transifex-sync
           script:
-            - transifex-sync upload-sources
-    download-translations:
-      - step:
-          image: audienceproject/transifex-sync
-          script:
-            - transifex-sync download-translations commit-bitbucket
+            - transifex-sync
   branches:
     translation:
       - step:
           image: audienceproject/transifex-sync
           script:
-            - transifex-sync upload-sources
+            - transifex-sync
 ```
