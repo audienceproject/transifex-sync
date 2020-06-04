@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "ajv": "^5.2.2",
-    "axios": "^0.16.2",
+    "axios": "^0.18.1",
     "concat-stream": "^1.6.0",
     "debug": "^3.0.1",
     "deep-diff": "^0.3.8",
