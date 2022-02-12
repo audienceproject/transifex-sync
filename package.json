@@ -9,7 +9,7 @@
     "bin": "node bin/transifex-sync.js"
   },
   "dependencies": {
-    "ajv": "^5.2.2",
+    "ajv": "^6.12.3",
     "axios": "^0.21.2",
     "concat-stream": "^1.6.0",
     "debug": "^3.1.0",
